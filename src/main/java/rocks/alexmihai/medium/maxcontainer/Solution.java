@@ -1,5 +1,10 @@
 package rocks.alexmihai.medium.maxcontainer;
 
+/**
+ * - Start from extreme left and right.
+ * - Keep track of max volume so far.
+ * - Keep the highest edge of the 2 (L, R) and come closer on the other side.
+ */
 public class Solution {
     public int maxArea(int[] height) {
         int l = 0, r = height.length - 1;
