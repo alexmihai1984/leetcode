@@ -1,5 +1,10 @@
 package rocks.alexmihai.medium.firstlastinsorted;
 
+/**
+ * - Binary search any occurrence of the target value.
+ * - Go left until something else is found.
+ * - Go right until something else is found.
+ */
 public class Solution {
     public int[] searchRange(int[] nums, int target) {
         var res = new int[]{-1,-1};

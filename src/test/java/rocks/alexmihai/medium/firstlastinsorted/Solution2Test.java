@@ -2,11 +2,11 @@ package rocks.alexmihai.medium.firstlastinsorted;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class SolutionTest {
+class Solution2Test {
 
-    Solution solution = new Solution();
+    Solution2 solution = new Solution2();
 
     @Test
     void testSearchRangeEmpty() {
@@ -45,7 +45,7 @@ class SolutionTest {
 
     @Test
     void testSearchLongRepeatingOdd() {
-        var res = solution.searchRange(new int[]{1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3}, 2);
+        var res = solution.searchRange(new int[]{11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,13}, 12);
 
         assertArrayEquals(new int[]{1, 25}, res);
     }
@@ -55,5 +55,12 @@ class SolutionTest {
         var res = solution.searchRange(new int[]{11,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,13}, 12);
 
         assertArrayEquals(new int[]{1, 24}, res);
+    }
+
+    @Test
+    void testSearchTwoItemsFound() {
+        var res = solution.searchRange(new int[]{2,2}, 2);
+
+        assertArrayEquals(new int[]{0, 1}, res);
     }
 }
