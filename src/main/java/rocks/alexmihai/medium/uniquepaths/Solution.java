@@ -1,5 +1,11 @@
 package rocks.alexmihai.medium.uniquepaths;
 
+/**
+ * - If there's a cell to the right, recursively compute number of paths from the right cell.
+ * - If there's a cell below, recursively compute number of paths from the cell below.
+ * - Add the 2 numbers above, that's the number of paths from the current cell.
+ * - Keep cache of computation for each cell, because you can get to a cell multiple ways.
+ */
 public class Solution {
     public int uniquePaths(int m, int n) {
         int[][] cache = new int[m][n];

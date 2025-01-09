@@ -1,5 +1,11 @@
 package rocks.alexmihai.medium.listtobst;
 
+/**
+ * - Arrange list as array to be able to access indices in O(1)
+ * - Mid element is the root
+ * - Build left subtree from elements to the left (recursively)
+ * - Build right subtree from elements to the right (recursively)
+ */
 public class Solution {
     public TreeNode sortedListToBST(ListNode head) {
         if (head == null) return null;

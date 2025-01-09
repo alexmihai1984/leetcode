@@ -1,5 +1,8 @@
 package rocks.alexmihai.medium.spiralmatrix;
 
+/**
+ * Just iterate in the correct order (not that easy) and set the next value.
+ */
 public class Solution {
     private enum Direction {
         RIGHT,
