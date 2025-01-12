@@ -1,5 +1,13 @@
 package rocks.alexmihai.medium.deletebstnode;
 
+/**
+ * Find the node and it's parent. If it's not found, leave the tree untouched.
+ * When found `node`:
+ * - Parent's link to `node` updated to link to `node`.right (if present)
+ * - Newly placed node's left becomes the parent's left
+ * - The old left of the newly placed node must be linked to some leaf, search for the right spot
+ * - If `node`.right not present, link parent to `node`.left
+ */
 public class Solution {
     private enum Direction { LEFT, RIGHT }
     private record SearchResult(TreeNode node, TreeNode parent, Direction direction) {}
