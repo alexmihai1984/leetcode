@@ -5,7 +5,9 @@ import java.util.Arrays;
 /**
  * Recursive solution.
  * - Check first char of each array
- * - If they are equal,
+ * - If they are equal, the result is the LCS of the 2 substrings excluding the first chars.
+ * - If they are not equal, the result is the max of (the LCS of the full text1 and the substring of text2 excluding
+ * the first char) and (the LCS of the full text2 and the substring of text1 excluding the first char)
  */
 public class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
