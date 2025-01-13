@@ -1,5 +1,8 @@
 package rocks.alexmihai.medium.deleteop2strings;
 
+/**
+ * Just find LCS, and then you need to remove the length of a word minus the LCS to get to the LCS.
+ */
 public class Solution {
     public int minDistance(String word1, String word2) {
         var lcs = longestCommonSubsequence(word1, word2);
