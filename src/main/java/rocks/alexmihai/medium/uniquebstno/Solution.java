@@ -1,7 +1,7 @@
 package rocks.alexmihai.medium.uniquebstno;
 
 /**
- * Lets thing of the tree at the root.
+ * Let's think of the tree at the root.
  * - Any element can be the root
  * - Given a chosen root element, the number of unique trees is = (the number of unique ways we can arrange the elements
  *   less than it in the left subtree) * (the number of unique ways we can arrange the elements greater than it in the
