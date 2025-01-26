@@ -1,5 +1,13 @@
 package rocks.alexmihai.medium.llswapnodes;
 
+/**
+ * Start at 'head'. Update 'head' to 'head.next' to return the correct reference.
+ * Considering each pair 'current' and 'current.next', update their 'next' references:
+ * - 'current.next' will reference 'current.next.next'
+ * - 'current.next.next' will reference 'current.next'
+ * Keep a reference of the tail node of the pair 'prev' so that after updating the next pair you can link 'prev'
+ * to the head of the new pair.
+ */
 public class Solution {
     public ListNode swapPairs(ListNode head) {
         if (head == null) return null;
