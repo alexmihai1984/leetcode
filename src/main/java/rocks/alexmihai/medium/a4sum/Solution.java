@@ -48,7 +48,7 @@ public class Solution {
         }
     }
 
-    public List<List<Integer>> fourSum(int[] nums, int target) {
+    public List<List<Integer>> fourSumOld(int[] nums, int target) {
         if (nums.length < 4) return List.of();
 
         var set = new HashSet<Quadruplet>();
@@ -68,6 +68,54 @@ public class Solution {
         var res = new ArrayList<List<Integer>>();
         for (var quadruplet : set) {
             res.add(List.of(quadruplet.first, quadruplet.second, quadruplet.third, quadruplet.fourth));
+        }
+
+        return res;
+    }
+
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        if (nums.length < 4) return List.of();
+
+        Arrays.sort(nums);
+
+        var res = new ArrayList<List<Integer>>();
+        for (int i = 0; i < nums.length; i++) {
+            //if(i>0 && nums[i]==nums[i-1])continue;
+            for (int j = i + 1; j < nums.length; j++) {
+                //if(j>i+1 && nums[j]==nums[j-1] )continue;
+                int left = j + 1;
+                int right = nums.length - 1;
+
+                while (left < right) {
+                    System.out.println("Looking at: " + nums[i] + "," + nums[j] + "," + nums[left] + "," + nums[right]);
+                    System.out.println("Indices: " + i + "," + j + "," + left + "," + right);
+//                    var leftVal = nums[left];
+//                    var rightVal = nums[right];
+
+                    long sum = (long) nums[i] + nums[j] + nums[left] + nums[right];
+                    if (sum == target) {
+                        res.add(List.of(nums[i], nums[j], nums[left], nums[right]));
+
+                        var leftVal = nums[left];
+                        var rightVal = nums[right];
+                        while (left < nums.length && nums[left] == leftVal) left++;
+                        while (right > j && nums[right] == rightVal) right--;
+
+//                        while (left < right && nums[left] == leftVal) left++;
+//                        while (left < right && nums[right] == rightVal) right--;
+                    } else if (sum < target) {
+                        left++;
+                    } else {
+                        right--;
+                    }
+
+
+//                    var leftVal = nums[left];
+//                    var rightVal = nums[right];
+//                    while (nums[left] == leftVal && left < nums.length) left++;
+//                    while (nums[right] == rightVal && right > j) right--;
+                }
+            }
         }
 
         return res;

@@ -49,4 +49,11 @@ class SolutionTest {
 
         assertEquals(8, res.size());
     }
+
+    @Test
+    void testFourSumIntOverflow() {
+        var res = solution.fourSum(new int[]{1000000000,1000000000,1000000000,1000000000}, -294967296);
+
+        assertEquals(0, res.size());
+    }
 }
